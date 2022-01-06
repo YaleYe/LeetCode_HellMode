@@ -1,11 +1,13 @@
 def canAttendMeetings(intervals):
-    newIntervals = sorted(intervals, key=lambda row: row[0], reverse=False)
-    index = 1
-    while index < len(intervals):
-        if newIntervals[index-1][1] < newIntervals[index][0]:
+    newInterval = sorted(intervals)
+
+    index = 0
+
+    while index < len(intervals) -1:
+        if newInterval[index][1] <= newInterval[index+1][0]:
             index += 1
         else:
             return False
     return True
-intervals = [[7,10],[2,4]]
+intervals = [[13,15],[1,13]]
 print(canAttendMeetings(intervals))

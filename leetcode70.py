@@ -1,15 +1,13 @@
 def climbStairs(n):
-    stack = []
-    def backtrack(counter, n, stack):
-        if counter == n:
-            stack.append(1)
-            return
-        if counter < n:
-            backtrack(counter+1, n,stack)
-            backtrack(counter+2, n,stack)
 
-    backtrack(0, n,stack)
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    if n == 2:
+        return 2
 
-    print(len(stack))
+    return climbStairs(n-1) + climbStairs(n-2)
 
-climbStairs(3)
+ans = climbStairs(5)
+print(ans)
