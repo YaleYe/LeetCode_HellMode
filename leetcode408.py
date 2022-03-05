@@ -1,22 +1,12 @@
 def validWordAbbreviation(word,abbr):
 
-    i = 0
-    j = 0 # abbr
+    wordIndex = 0
+    abbrIndex = 0
+    num = 0
+    while wordIndex <= len(word)-1 or abbrIndex <= len(abbr) -1:
 
-    while j < len(abbr) and i < len(word):
-        if abbr[j].isalnum():
-            if word[i] != abbr[j]:
-                return False
-
-            i += 1
-            j += 1
-
-        else:
-            if abbr[j] ==  "0":
-                return False
-
-            temp = 0
-            while i
+        while abbr[abbrIndex].isdigit():
+           num = num*10 + abbr[abbrIndex]
 
 word ="hi"
 abbr = "hi1"
